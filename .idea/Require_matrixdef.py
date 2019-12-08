@@ -24,13 +24,14 @@ def Require_matrix_define(n):               #生成申请矩阵
     return Require_matrix
 
 
-def Show_Req_mat():
-    print(Require_matrix)
+def Show_Req_B_T_mat(n,Require_matrix):
     # 统计申请矩阵
     Require_B_T_matrix = np.zeros((BAND_WIDTH ,TIME_LENGTH ),dtype=int)
-    for j in range (n):
-       Require_B_T_matrix [int(round(c_b[j,0]-0.5*b[j,0])):int( round(c_b[j,0] + 0.5*b[j,0])) ,int(round(c_t[j,0]-0.5*t[j,0])): int(round(c_t[j,0] + 0.5*t[j,0]))] \
-           = Require_B_T_matrix [int(round(c_b[j,0]-0.5*b[j,0])):int( round(c_b[j,0] + 0.5*b[j,0])) ,int(round(c_t[j,0]-0.5*t[j,0])): int(round(c_t[j,0] + 0.5*t[j,0]))] +1
+    for i in range (n):
+       Require_B_T_matrix[int(round(Require_matrix[i,2]-0.5*Require_matrix[i,0])):int( round(Require_matrix[i,2] + 0.5*Require_matrix[i,0])),
+                      int(round(Require_matrix[i,3]-0.5*Require_matrix[i,1])): int(round(Require_matrix[i,3] + 0.5*Require_matrix[i,1]))] \
+           = Require_B_T_matrix [int(round(Require_matrix[i,2]-0.5*Require_matrix[i,0])):int( round(Require_matrix[i,2] + 0.5*Require_matrix[i,0])),
+                      int(round(Require_matrix[i,3]-0.5*Require_matrix[i,1])): int(round(Require_matrix[i,3] + 0.5*Require_matrix[i,1]))] +1
 
     sns.heatmap(Require_B_T_matrix ,annot=False , vmin=0, vmax=10, center= 3,cmap= "Blues",xticklabels =False  ,yticklabels =False   )
     plt.xlabel ('Time')
