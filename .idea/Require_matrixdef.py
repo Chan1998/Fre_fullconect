@@ -21,14 +21,16 @@ def Require_matrix_define(n):               #生成申请矩阵
         c_b[i, 0] = round(BAND_WIDTH * random.random())
         c_t[i, 0] = round(TIME_LENGTH * random.random())
     Require_matrix = np.hstack((b ,t ,c_b ,c_t ))
-    print(Require_matrix)
+    return Require_matrix
 
+
+def Show_Req_mat():
+    print(Require_matrix)
     # 统计申请矩阵
     Require_B_T_matrix = np.zeros((BAND_WIDTH ,TIME_LENGTH ),dtype=int)
     for j in range (n):
        Require_B_T_matrix [int(round(c_b[j,0]-0.5*b[j,0])):int( round(c_b[j,0] + 0.5*b[j,0])) ,int(round(c_t[j,0]-0.5*t[j,0])): int(round(c_t[j,0] + 0.5*t[j,0]))] \
            = Require_B_T_matrix [int(round(c_b[j,0]-0.5*b[j,0])):int( round(c_b[j,0] + 0.5*b[j,0])) ,int(round(c_t[j,0]-0.5*t[j,0])): int(round(c_t[j,0] + 0.5*t[j,0]))] +1
-
 
     sns.heatmap(Require_B_T_matrix ,annot=False , vmin=0, vmax=10, center= 3,cmap= "Blues",xticklabels =False  ,yticklabels =False   )
     plt.xlabel ('Time')
@@ -36,7 +38,7 @@ def Require_matrix_define(n):               #生成申请矩阵
     plt.show()
 
 
-    return Require_matrix 
+
 
 
 
