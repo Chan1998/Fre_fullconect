@@ -36,7 +36,9 @@ def Require_matrix_define(n):               #生成申请矩阵
     plt.show()
 
 
+    return Require_matrix 
 
 
 
-Require_matrix_define(100)
+
+#Require_matrix_define(100)
