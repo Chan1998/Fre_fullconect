@@ -41,7 +41,7 @@ def Show_All_mat(Allocated_B_T_matrix,final_result_array):
     plt.show()
 
 #def Show_H_cost_success(H, success_num, cost):
-#   print ("H is %d,success_num is %d,cost is %d" % (H, success_num, cost))
+ #  print ("H is %d,success_num is %d,cost is %d" % (H, success_num, cost))
 
 
 
