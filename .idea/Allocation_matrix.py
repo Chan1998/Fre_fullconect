@@ -4,7 +4,7 @@ import random
 import seaborn as sns
 import matplotlib.pyplot as plt
 import Require_matrixdef as req
-
+import tensorflow as tf
 #S_N=20                          #这里我们假设通信信噪比固定为20dB
 
 
@@ -14,6 +14,7 @@ def Cost_caculate(n,Req_mat,result_array):
     success_num = 0
     cost = 0
     final_result_array = np.zeros((n,1),dtype=int)
+
     for i in range (n):
         if result_array[i,0]:
             if np.all(Allocated_B_T_matrix[int(round(Req_mat[i,2]-0.5*Req_mat[i,0])):int( round(Req_mat [i,2] + 0.5*Req_mat [i,0])),
