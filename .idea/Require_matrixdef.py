@@ -4,10 +4,10 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 
-BAND_WIDTH = 100           #带宽1000MHz
-TIME_LENGTH = 100          #时间总长1440分钟
+BAND_WIDTH = 1000          #带宽1000MHz
+TIME_LENGTH = 1440          #时间总长1440分钟
 AVG_BAND_WIDTH = 10         #平均使用带宽
-AVG_TIME_LONGTH = 10        #平均使用时长
+AVG_TIME_LONGTH = 1440        #平均使用时长
 
 
 def Require_matrix_define(n):               #生成申请矩阵

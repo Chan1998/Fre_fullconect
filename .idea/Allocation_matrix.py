@@ -4,7 +4,6 @@ import random
 import seaborn as sns
 import matplotlib.pyplot as plt
 import Require_matrixdef as req
-import tensorflow as tf
 #S_N=20                          #这里我们假设通信信噪比固定为20dB
 
 
@@ -25,8 +24,9 @@ def Cost_caculate(n,Req_mat,result_array):
                     int(round(Req_mat[i, 3] - 0.5 * Req_mat[i, 1])): int(round(Req_mat[i, 3] + 0.5 * Req_mat[i, 1]))] = 1
                 final_result_array[i,0] = 1
 
-    cost = -H
-    return Allocated_B_T_matrix,final_result_array, cost,H,success_num
+    return Allocated_B_T_matrix,final_result_array, H,success_num
+
+
 
 def Show_All_mat(Allocated_B_T_matrix,final_result_array):
 
@@ -45,9 +45,11 @@ def Show_All_mat(Allocated_B_T_matrix,final_result_array):
  #  print ("H is %d,success_num is %d,cost is %d" % (H, success_num, cost))
 
 
-
-#n = 10
-#result_array =  np.random.randint(0,2,size=(n,1))
-#print (result_array)
-#Req_mat = req.Require_matrix_define(n)
-#cost_caculate(n,Req_mat,result_array  )
+'''
+n = 10
+result_array =  np.random.randint(0,2,size=(n,1))
+print (result_array)
+Req_mat = req.Require_matrix_define(n)
+Allocated_B_T_matrix, final_result_array, H, success_num=Cost_caculate(n,Req_mat,result_array  )
+Show_All_mat(Allocated_B_T_matrix,final_result_array)
+'''
